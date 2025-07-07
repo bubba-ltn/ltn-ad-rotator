@@ -7,12 +7,12 @@
  */
 
 // 1) Include the library
-require __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+require_once plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
 
 // 2) Point it at your GitHub repo
 $updateChecker = Puc_v4_Factory::buildUpdateChecker(
     'https://api.github.com/repos/bubba-ltn/ltn-ad-rotator', // ← change this
-    __FILE__,                            // full path to this plugin file
+    plugin_dir_path( __FILE__ ),                            // full path to this plugin file
     'ltn-ad-rotator'                     // this plugin’s slug (folder/file name)
 );
 
