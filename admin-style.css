@@ -1,0 +1,3 @@
+.ltn-ad-preview-container{position:relative;display:inline-block;max-width:100%}
+.ltn-ad-preview-img{display:block;width:100%;height:auto;border:1px solid #ccc;margin-bottom:1em}
+.ltn-ad-overlay{position:absolute;bottom:1.5em;left:1em;background:rgba(64,179,255,0.75);color:#fff;border-radius:10px;padding:1em;font-weight:bold;font-size:0.9em;pointer-events:none}
