@@ -1,3 +1,7 @@
 .ltn-ad-preview-container{position:relative;display:inline-block;max-width:100%}
 .ltn-ad-preview-img{display:block;width:100%;height:auto;border:1px solid #ccc;margin-bottom:1em}
 .ltn-ad-overlay{position:absolute;bottom:1.5em;left:1em;background:rgba(64,179,255,0.75);color:#fff;border-radius:10px;padding:1em;font-weight:bold;font-size:0.9em;pointer-events:none}
+.ltn-alt-row{margin:0 0 .75em;padding:.75em;background:#f6f7f7;border:1px solid #dcdcde;border-radius:4px}
+.ltn-alt-fields{display:flex;flex-wrap:wrap;gap:.5em;align-items:center}
+.ltn-alt-clicks{font-weight:600}
+.ltn-alt-thumb{display:block;max-width:240px;height:auto;margin-top:.5em;border:1px solid #ccc}
