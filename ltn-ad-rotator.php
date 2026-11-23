@@ -2,24 +2,21 @@
 /**
  * Plugin Name: LTN Ad Rotator
  * Description: Display and rotate global ads with start/end dates, media library integration, per-campaign reset, and click tracking.
- * Version: 1.6.1
+ * Version: 1.6.2
  * Author: Love Thy Nerd
  */
 
-// 1) Include the library
+if (!defined('ABSPATH')) exit;
+
+// GitHub auto-updates (Plugin Update Checker v5)
 require_once plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
 
-// 2) Point it at your GitHub repo
-$updateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://api.github.com/repos/bubba-ltn/ltn-ad-rotator', // ← change this
-    plugin_dir_path( __FILE__ ),                            // full path to this plugin file
-    'ltn-ad-rotator'                     // this plugin’s slug (folder/file name)
+$ltn_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+    'https://github.com/bubba-ltn/ltn-ad-rotator/',
+    __FILE__,
+    'ltn-ad-rotator'
 );
-
-// 3) If you want to track a branch other than “main”, uncomment & adjust:
-// $updateChecker->setBranch('main');
-
-if (!defined('ABSPATH')) exit;
+$ltn_update_checker->setBranch('main');
 
 // Enqueue admin assets
 add_action('admin_enqueue_scripts', function($hook) {
