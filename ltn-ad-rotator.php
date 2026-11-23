@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LTN Ad Rotator
  * Description: Display and rotate global ads with start/end dates, media library integration, per-campaign reset, and click tracking.
- * Version: 1.6
+ * Version: 1.6.1
  * Author: Love Thy Nerd
  */
 
