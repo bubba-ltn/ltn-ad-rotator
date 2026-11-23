@@ -1,0 +1,29 @@
+name: Build release zip
+
+# When a release is published, build an installable WordPress zip
+# (folder named "ltn-ad-rotator") and attach it to that release.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the release tag
+        uses: actions/checkout@v4
+
+      - name: Build zip
+        run: |
+          mkdir -p build/ltn-ad-rotator
+          rsync -a --exclude='.git' --exclude='.github' --exclude='.gitattributes' --exclude='build' ./ build/ltn-ad-rotator/
+          cd build
+          zip -rq ../ltn-ad-rotator.zip ltn-ad-rotator
+
+      - name: Attach zip to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" ltn-ad-rotator.zip --clobber
